@@ -48,6 +48,13 @@ body {
   width: 100%;
 }
 
+.input-form-box {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .json-label {
   font-size: 2rem;
   font-weight: 300;
