@@ -1,7 +1,13 @@
-const cleanString = function cleanString(str) {
+const cleanString_Simple = function cleanString_Simple(str) {
   str = str.split('=');
   str = str[str.length - 1];
   return str.replace(/[;]+/g, '');
+};
+
+const cleanString = function cleanString(str) {
+  str = str.split('\n')
+  str = str.slice(4, str.length - 2);
+  return str.join('\n');
 };
 
 const getUnique = function getUnique(one, two) {
@@ -52,6 +58,7 @@ const buildCSV = function buildCSV(list, keys) {
 
 
 module.exports.convertToCSV = function convertToCSV(str) {
+  // console.log(cleanString(str));
   let obj = JSON.parse(cleanString(str));
   let allKeysPresent = buildKeyList(obj);
   let objectList = flattenObject(obj);
