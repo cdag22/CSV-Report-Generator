@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>CSV Report Generator</title>
+  <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script> -->
+  <!-- <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="src/app.js"></script>
+</head>
+
+<body>
+  <header class="jumbotron bg-dark">
+    <h1 class="display-4 text-center text-white">CSV Report Generator</h1>
+  </header>
+
+  <main class="container mt-5">
+    <div class="row">
+      <div class="col-6 m-auto">
+        <form action="/upload_csv" method="POST">
+          <div class="form-group">
+            <label for="csv-file" class="display-5">Input a CSV file</label>
+            <textarea name="" id="csv-file" class="form-control" cols="30" rows="10"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" text="Submit" class="btn btn-outline-primary btn-block bt-lg">
+          </div>
+        </form>
+      </div>
+      <div class="col-6 m-auto">
+
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

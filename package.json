@@ -1,0 +1,22 @@
+{
+  "name": "csv-report-generator",
+  "version": "1.0.0",
+  "description": "a csv report generator ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdag22/CSV-Report-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdag22/CSV-Report-Generator/issues"
+  },
+  "homepage": "https://github.com/cdag22/CSV-Report-Generator#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
