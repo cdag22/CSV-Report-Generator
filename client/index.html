@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
@@ -23,19 +24,28 @@
 
   <main class="container mt-5">
     <div class="row">
-      <div class="col-6 m-auto">
-        <form action="/upload_csv" method="POST">
-          <div class="form-group">
-            <label for="csv-file" class="display-5">Input a CSV file</label>
-            <textarea name="" id="csv-file" class="form-control" cols="30" rows="10"></textarea>
+      <div class="col-10 m-auto form-container bg-dark">
+        <form action="/upload_csv" class="form-box" method="POST" enctype="text/plain">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="csv-file" class="json-label">Input JSON data</label>
+                <textarea name="input_json" id="csv-file" class="form-control" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="">
+                <div class="form-group">
+                  <label for="csv-file" class="json-label text-right">Output CSV</label>
+                  <textarea name="" id="csv-file" class="form-control" cols="30" rows="10"></textarea>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="form-group">
-            <input type="submit" text="Submit" class="btn btn-outline-primary btn-block bt-lg">
+            <input type="submit" text="Submit" class="btn btn-block bt-lg blue-bg submit-btn">
           </div>
         </form>
-      </div>
-      <div class="col-6 m-auto">
-
       </div>
     </div>
   </main>

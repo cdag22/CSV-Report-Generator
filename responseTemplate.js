@@ -17,8 +17,7 @@ module.exports.template = `
       </form>
     </div>
     <div class="col-6 m-auto">
-
+      <p>{{ csv }}</p>
     </div>
   </div>
-</main>
-`;
+</main>`;
