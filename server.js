@@ -9,7 +9,7 @@ const csvFilePath = './csv-data.csv';
 
 let csv = '';
 
-// app.use(bodyParser.raw());
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.use(express.static('views'));
 app.set('view engine', 'ejs');
@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   res.status(200);
+  csv = csv || { list: [] };
   res.render('index', { csv });
 });
 
@@ -39,18 +40,15 @@ app.get('/download_csv', (req, res) => {
 });
 
 app.post('/upload_csv', (req, res) => {
-  let buff = [];
-  req.on('data', chunk => {
-    buff.push(chunk);
-  });
-  req.on('end', () => {
-    let data = Buffer.concat(buff).toString();
-    csv = util.convertToCSV(data);
-    res.status(200);
-    res.redirect('/');
-  });
+  csv = util.convertToCSV(req.body);
+  console.log(csv);
+  res.status(200)
+  res.render('index', { csv });
 });
 
+
+// arr = arr.map(obj => keys.map(key => obj[key]).join(','))
+// [keys.join(','),...arr].join('\n');
 
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`)

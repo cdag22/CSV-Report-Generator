@@ -51,15 +51,16 @@ const convertObjectsToLists = function convertObjectsToLists(objectList, keys) {
   return objectList.map(obj => keys.map(key => obj[key]).join(','));
 };
 
-const buildCSV = function buildCSV(list, keys) {
-  return [].concat(keys.join(','), ...list).join('\n');
+const buildCSV = function buildCSV(arr, keys) {
+  let list = [].concat(keys.join(','), ...arr);
+  return { csv: list.join('\n'), list }
 };
 
 
 
-module.exports.convertToCSV = function convertToCSV(str) {
+module.exports.convertToCSV = function convertToCSV(obj) {
   // console.log(cleanString(str));
-  let obj = JSON.parse(cleanString(str));
+  // let obj = JSON.parse(JSON.stringify(str));
   let allKeysPresent = buildKeyList(obj);
   let objectList = flattenObject(obj);
 

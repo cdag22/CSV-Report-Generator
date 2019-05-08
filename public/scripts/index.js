@@ -1,16 +1,19 @@
 $(document).ready(function () {
 
   const $uploadBtn = $('#upload-btn');
-  const $downloadBtn = $('#download-btn');
+  const $fileInput = $('#file-input');
 
-  $uploadBtn.on('submit', function (e) {
-    e.preventDefault();
+  let fileToUpload = '';
 
+  $fileInput.on('change', (e) => {
+    fileToUpload = e.target.files[0];
   });
 
-  $downloadBtn.on('submit', function (e) {
-    e.preventDefault();
-
+  $uploadBtn.on('click', function (e) {
+    if (fileToUpload) {
+      $fileInput.val('');
+      uploadFile(fileToUpload);
+    }
   });
 
 });

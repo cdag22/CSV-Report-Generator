@@ -5,34 +5,37 @@
 
 <main class="container mt-5">
   <div class="row">
-    <div class="col-10 m-auto form-container bg-dark">
-      <div class="row">
-        <div class="col-6">
-          <form action="/upload_csv" class="form-box input-form-box" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="csv-file" class="json-label">Input JSON data</label>
-              <!-- <textarea name="input_json" id="csv-file" class="form-control" cols="30" rows="10"></textarea> -->
-              <input id="file-input" type="file" name="input_json" id="csv-file" class="btn blue-bg">
-            </div>
-            <div class="form-group">
-              <input id="upload-btn" type="submit" value="Submit" class="btn btn-block bt-lg blue-bg submit-btn">
-            </div>
-          </form>
+
+    <div class="col-6 br">
+      <div id="upload-form" class="form-container input-form-box">
+        <label for="csv-file" class="json-label">Input JSON data</label>
+        <div class="form-group">
+          <input id="file-input" type="file" name="input_json" id="csv-file" class="btn blue-bg submit-btn btn-block">
         </div>
-        <div class="col-6">
-          <form action="/download_csv" class="form-box" method="GET">
-            <div class="form-group">
-              <label for="csv-file" class="json-label text-right">Output CSV</label>
-              <textarea name="" id="csv-file" class="form-control" cols="30" rows="10" readonly><%= csv %></textarea>
-            </div>
-            <div class="form-group">
-              <input id="download-btn" type="submit" value="Download CSV File"
-                class="btn btn-block bt-lg blue-bg submit-btn">
-            </div>
-          </form>
+        <div class="form-group">
+          <button id="upload-btn" type="submit" class="btn btn-block bt-lg blue-bg submit-btn">Submit File</button>
         </div>
+        <form action="/download_csv" method="GET">
+          <div class="form-group">
+            <input id="download-btn" type="submit" value="Download CSV File"
+              class="btn btn-block bt-lg blue-bg submit-btn">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="form-container">
+        <h2 for="csv-file" class="json-label text-right">Output CSV</h2>
+        <ul class="list-group list-group-flush">
+          <% csv.list.forEach(item => { %>
+          <li class="list-group-item"><%= item %></li>
+          <% }) %>
+        </ul>
       </div>
     </div>
   </div>
+  </div>
+
 </main>
 <% include footer %>
